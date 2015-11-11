@@ -110,7 +110,7 @@ sub Run {
 	my $UserObject = $Kernel::OM->Get('Kernel::System::User');
 	my %List = $UserObject->UserList();
 	my @Result;
-	foreach $key(keys %List) {
+	for my $key(keys %List) {
 		my $UserObject = $Kernel::OM->Get('Kernel::System::User');
 		my %UserEntry = $UserObject->GetUserData(UserID=>$key);
 		my $UserBundle = {
