@@ -110,10 +110,10 @@ sub Run {
 
 	my @Result;
 
-	while(($uid,$uname) = each %List){
-		my %Item = GetUserData(UserID=>$uid);
-		push @Result,%Item;
-	};
+
+	foreach $key(keys %List){
+		push @Result,GetUserData(UserID=>$key);
+	}
     # return result
     return {
         Success => 1,
