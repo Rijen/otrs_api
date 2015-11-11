@@ -112,7 +112,7 @@ sub Run {
 
 
 	foreach $key(keys %List){
-		push @Result,GetUserData(UserID=>$key);
+		push @Result,$UserObject->GetUserData(UserID=>$key);
 	}
     # return result
     return {
