@@ -106,15 +106,18 @@ sub Run {
     my ( $Self, %Param ) = @_;
 
 	my $UserObject = $Kernel::OM->Get('Kernel::System::User');
-	my %List = $UserObject->UserList(
-        Type          => 'Long'
-    );
+	my %List = $UserObject->UserList();
 
+	my @Result;
 
+	while(($uid,$uname) = each %List){
+		my %Item = GetUserData(UserID=>$uid);
+		push @Result,%Item;
+	};
     # return result
     return {
         Success => 1,
-        Data    => \%List,
+        Data    => \@Result,
     };
 }
 
