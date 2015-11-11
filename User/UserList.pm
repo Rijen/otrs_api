@@ -45,17 +45,6 @@ sub new {
 sub Run {
     my ( $Self, %Param ) = @_;
 
-    my $Result = $Self->Init(
-        WebserviceID => $Self->{WebserviceID},
-    );
-
-    if ( !$Result->{Success} ) {
-        $Self->ReturnError(
-            ErrorCode    => 'Webservice.InvalidConfiguration',
-            ErrorMessage => $Result->{ErrorMessage},
-        );
-    }
-
     my ( $UserID, $UserType ) = $Self->Auth(
         %Param,
     );
