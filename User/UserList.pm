@@ -6,9 +6,11 @@
 #
 
 package Kernel::GenericInterface::Operation::User::UserList;
+
 use strict;
 use warnings;
-use MIME::Base64;
+
+
 use Kernel::System::VariableCheck qw(IsArrayRefWithData IsHashRefWithData IsStringWithData);
 
 use base qw(
@@ -61,5 +63,5 @@ sub Run {
     return %List;
 }
 
-1;
+
 
