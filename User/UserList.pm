@@ -107,7 +107,7 @@ sub Run {
 
 	my $UserObject = $Kernel::OM->Get('Kernel::System::User');
 	my %List = $UserObject->UserList(
-        Type          => 'Short'
+        Type          => 'Long'
     );
 
 
