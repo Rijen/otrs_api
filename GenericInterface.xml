@@ -274,6 +274,18 @@
             </Hash>
         </Setting>
     </ConfigItem>
+    <ConfigItem Name="GenericInterface::Operation::Module###User::UserList" Required="0" Valid="0">
+        <Description Translatable="1">GenericInterface module registration for the operation layer.</Description>
+        <Group>GenericInterface</Group>
+        <SubGroup>GenericInterface::Operation::ModuleRegistration</SubGroup>
+        <Setting>
+            <Hash>
+                <Item Key="Name">UserList</Item>
+                <Item Key="Controller">User</Item>
+                <Item Key="ConfigDialog">AdminGenericInterfaceOperationDefault</Item>
+            </Hash>
+        </Setting>
+    </ConfigItem>
     <ConfigItem Name="GenericInterface::Invoker::Module###Test::Test" Required="0" Valid="0">
         <Description Translatable="1">GenericInterface module registration for the invoker layer.</Description>
         <Group>GenericInterface</Group>
