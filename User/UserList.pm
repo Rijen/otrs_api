@@ -58,7 +58,7 @@ sub Run {
 		
 		my $GroupObject = $Kernel::OM->Get('Kernel::System::Group');
 		my %UserRoles = $GroupObject->GroupUserRoleMemberList(
-			UserID => $ID,
+			UserID => $key,
 			Result => 'HASH',
 		);
 		
