@@ -47,11 +47,23 @@ sub Run {
 	my ( $Self, %Param ) = @_;
 	my $UserObject = $Kernel::OM->Get('Kernel::System::User');
 	my %List = $UserObject->UserList();
+	
+	
+	
+	
 	my %Result;
 	foreach my $key(keys %List) {
 		my $UserObject = $Kernel::OM->Get('Kernel::System::User');
 		my %UserEntry = $UserObject->GetUserData(UserID=>$key);
+		
+		my $GroupObject = $Kernel::OM->Get('Kernel::System::Group');
+		my %UserRoles = $GroupObject->GroupUserRoleMemberList(
+			UserID => $ID,
+			Result => 'HASH',
+		);
+		
 		$Result{$key} = \%UserEntry;
+		$Result{$key}{Roles} = \%UserRoles;
 		
 	}
 	# return result
