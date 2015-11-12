@@ -47,11 +47,11 @@ sub Run {
 	my ( $Self, %Param ) = @_;
 	my $UserObject = $Kernel::OM->Get('Kernel::System::User');
 	my %List = $UserObject->UserList();
-	my @Result;
+	my %Result;
 	foreach my $key(keys %List) {
 		my $UserObject = $Kernel::OM->Get('Kernel::System::User');
 		my %UserEntry = $UserObject->GetUserData(UserID=>$key);
-		push @Result, \%UserEntry;
+		$Result{$key} = %UserEntry;
 		
 	}
 	# return result
