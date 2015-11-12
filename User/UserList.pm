@@ -57,7 +57,7 @@ sub Run {
 	# return result
 	return {
 		Success => 1,
-        Data    => \@Result,
+        Data    => \%Result,
 	};
 }
 1;
