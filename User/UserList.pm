@@ -51,7 +51,7 @@ sub Run {
 	foreach my $key(keys %List) {
 		my $UserObject = $Kernel::OM->Get('Kernel::System::User');
 		my %UserEntry = $UserObject->GetUserData(UserID=>$key);
-		$Result{$key} = %UserEntry;
+		$Result{$key} = \%UserEntry;
 		
 	}
 	# return result
